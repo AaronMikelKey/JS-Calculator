@@ -1,0 +1,1 @@
+This is my first "big" project made during the odin projects front end course.
