@@ -41,7 +41,7 @@ html, body {
     padding: 10px 0px 5px 15px;
 }
 
-.buttonArea {
+#buttonArea {
     border: 2px solid blue;
 }
 

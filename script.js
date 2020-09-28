@@ -31,3 +31,8 @@ document.getElementById("clear").addEventListener("click", function() {
 });
 
 //function for appending button press to user display
+const press = 
+
+document.getElementById("nine").addEventListener("click", function(){ 
+    document.getElementById("display").innerHTML += document.getElementById("nine").value; 
+});
