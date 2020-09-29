@@ -85,3 +85,10 @@ document.getElementById("backspace").addEventListener("click", function() {
     }
 });
 
+//function for the sign change button.  Math.sign() works in all modern browsers but not in IE
+document.getElementById("sign").addEventListener("click", function() {
+    if (Math.sign(userDisplay) != 0 && Math.sign(userDisplay) != NaN) { //Shouldn't work if there is no input or if the number is zero
+        userDisplay *= -1; //multiply userDisplay by negative, either changing it to negative or positive
+        document.getElementById("display").querySelector("span").innerHTML = userDisplay; //set user display to userDisplay variable
+    }
+});
