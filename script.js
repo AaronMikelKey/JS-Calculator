@@ -26,13 +26,8 @@ const operate = function(operator, num1, num2) {
     }
 }
 //function for clearing display
-document.getElementById("clear").addEventListener("click", function() {
+document.getElementById("clear").addEventListener("click", function(elmnt) {
     document.getElementById("display").innerHTML = "";
 });
 
 //function for appending button press to user display
-const press = 
-
-document.getElementById("nine").addEventListener("click", function(){ 
-    document.getElementById("display").innerHTML += document.getElementById("nine").value; 
-});

@@ -14,41 +14,36 @@
 <body>
     <div class="container">
         <div class="calculator">
-            <div id="display"><span>01&#247;2345+678x90</span></div>
-            <div id="displayWarning"><span>Warning Message.</span></div>
+            <div id="display"><span>0</span>
+                <button type="button" id="backspace" class="backspace" data-key="8">&#8592;</button>
+            </div>
+            <div id="displayWarning"><span></span></div>
 <!-- Each button has an ID for JS reference.  Some have a class for JS grouping.
-        Buttons without a class function on their own.
-        Also separated by row length for reference. -->
+        Buttons without a class function on their own. -->
             <div id="buttonArea">
-                <div class="buttonRow">
-                    <button id="clear">Clear</button>
-                    <button id="posNeg" class="standAlone">+/-</button>
-                    <button id="percent" class="standAlone">%</button>
-                    <button id="divide" class="operator">&#247;</button>
-                </div>
-                <div class="buttonRow">
-                    <button id="seven" class="number">7</button>
-                    <button id="eight" class="number">8</button>
-                    <button id="nine" class="number" value="9">9</button>
-                    <button id="multiply" class="operator">x</button>
-                </div>
-                <div class="buttonRow">
-                    <button id="four" class="number">4</button>
-                    <button id="five" class="number">5</button>
-                    <button id="six" class="number">6</button>
-                    <button id="subtract" class="operator">-</button>
-                </div>
-                <div class="buttonRow">
-                    <button id="one" class="number">1</button>
-                    <button id="two" class="number">2</button>
-                    <button id="three" class="number">3</button>
-                    <button id="add" class="operator">+</button>
-                </div>
-                <div class="buttonRow">
-                    <button id="zero" class="number">0</button>
-                    <button id="decimal">.</button>
-                    <button id="equals">=</button>
-                </div>
+                <button type="button" class="clear" value="clear" data-key="27">Clear</button>
+                <button type="button" class="sign" value="sign">+/-</button>
+                <button type="button" class="percent" value="percent">%</button>
+                <button type="button" class="operator" value="/">&#247;</button>
+
+                <button type="button" class="number" value="7" data-key="55">7</button>
+                <button type="button" class="number" value="8" data-key="56">8</button>
+                <button type="button" class="number" value="9" data-key="57">9</button>
+                <button type="button" class="operator" value="*">x</button>
+
+                <button type="button" class="number" value="4" data-key="52">4</button>
+                <button type="button" class="number" value="5" data-key="53">5</button>
+                <button type="button" class="number" value="6" data-key="54">6</button>
+                <button type="button" class="operator" value="-">-</button>
+
+                <button type="button" class="number" value="1" data-key="49">1</button>
+                <button type="button" class="number" value="2" data-key="50">2</button>
+                <button type="button" class="number" value="3" data-key="51">3</button>
+                <button type="button" class="operator" value="+">+</button>
+
+                <button type="button" id="zero" class="number" value="0">0</button>
+                <button type="button" class="decimal" value=".">.</button>
+                <button type="button" class="operator" value="equals" value="=" data-key="66">=</button>
             </div>
         </div>
     </div>
