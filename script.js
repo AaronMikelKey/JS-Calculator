@@ -51,12 +51,12 @@ for (let i=0;i<opInputs.length;i++) {
         if (operator === undefined && operator != "=" && num1 === undefined) {
             num1 = parseFloat(userDisplay);
             operator = this.value;
+            userDisplay = "";
             document.getElementById("display").querySelector("span").innerHTML = "";
         } else if (operator != undefined && operator != "=" && num1 != undefined) {
             num2 = parseFloat(userDisplay);
             operate(operator, num1, num2);
             userDisplay = result;
-            num2 = undefined;
             document.getElementById("display").querySelector("span").innerHTML = userDisplay;
         }
     }) 
