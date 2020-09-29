@@ -28,7 +28,7 @@ document.getElementById("buttonArea").querySelector(".clear").addEventListener("
     num2 = undefined;
 });
 
-//function for appending button press to user display
+//function for appending number press to user display
 var numInputs = document.getElementById("buttonArea").querySelectorAll(".number");
 for (let i=0;i<numInputs.length;i++) {
     numInputs[i].addEventListener("click", function() {
@@ -43,6 +43,15 @@ for (let i=0;i<numInputs.length;i++) {
         }
     })
 }
+
+//function for appending decimal point to number
+document.getElementById("buttonArea").querySelector(".decimal").addEventListener("click", function() {
+    let isDecimal = userDisplay.toString().includes(".");
+    if (!isDecimal) {
+        userDisplay += this.value;
+        document.getElementById("display").querySelector("span").innerHTML = userDisplay;
+    }
+});
 
 //function for setting operator and num1
 var opInputs = document.getElementById("buttonArea").querySelectorAll(".operator");
