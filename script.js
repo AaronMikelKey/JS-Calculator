@@ -48,16 +48,20 @@ for (let i=0;i<numInputs.length;i++) {
 var opInputs = document.getElementById("buttonArea").querySelectorAll(".operator");
 for (let i=0;i<opInputs.length;i++) {
     opInputs[i].addEventListener("click", function() {
-        if (operator === undefined && operator != "=" && num1 === undefined) {
-            num1 = parseFloat(userDisplay);
-            operator = this.value;
-            userDisplay = "";
-            document.getElementById("display").querySelector("span").innerHTML = "";
-        } else if (operator != undefined && operator != "=" && num1 != undefined) {
-            num2 = parseFloat(userDisplay);
-            operate(operator, num1, num2);
-            userDisplay = result;
-            document.getElementById("display").querySelector("span").innerHTML = userDisplay;
+        if (operator === undefined && operator != "=" && num1 === undefined) { //if no operator has been set, = is not the operator, and num1 != some value
+            num1 = parseFloat(userDisplay); //Set num1 to first entered value
+            operator = this.value; //Set operator to entered operator
+            userDisplay = ""; //clear userDisplay vairable
+            document.getElementById("display").querySelector("span").innerHTML = ""; //clear user display
+        } else if (operator != undefined && operator != "=" && num1 != undefined && num2 === undefined) { //if an operator has been set, = is not the operator, and num1 = some value
+            num2 = parseFloat(userDisplay); //num2 = second entered value
+            console.log(num2 + " num2");
+            operate(operator, num1, num2); //perform math on the two values
+            userDisplay = result; //set userDisplay variable to the result of operate()
+            console.log(num1 + " old num1");
+            num1 = result;  //set num1 to the result
+            console.log(num1 + " new num1");
+            document.getElementById("display").querySelector("span").innerHTML = userDisplay; //set user display to userDisplay variable
         }
     }) 
 }
