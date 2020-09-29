@@ -53,14 +53,16 @@ for (let i=0;i<opInputs.length;i++) {
             operator = this.value; //Set operator to entered operator
             userDisplay = ""; //clear userDisplay vairable
             document.getElementById("display").querySelector("span").innerHTML = ""; //clear user display
-        } else if (operator != undefined && operator != "=" && num1 != undefined && num2 === undefined) { //if an operator has been set, = is not the operator, and num1 = some value
+        } else if (operator != undefined && operator != "=" && num1 != undefined && num2 === undefined) { //if an operator has been set, = is not the operator, num1 = some value, and num2 != some value
             num2 = parseFloat(userDisplay); //num2 = second entered value
-            console.log(num2 + " num2");
             operate(operator, num1, num2); //perform math on the two values
             userDisplay = result; //set userDisplay variable to the result of operate()
-            console.log(num1 + " old num1");
             num1 = result;  //set num1 to the result
-            console.log(num1 + " new num1");
+            document.getElementById("display").querySelector("span").innerHTML = userDisplay; //set user display to userDisplay variable
+        } else if (operator != undefined && operator != "=" && num1 != undefined && num2 != undefined) { //Second press of operator button without changing input
+            operate(operator, num1, num2); //perform math on the two values
+            userDisplay = result; //set userDisplay variable to the result of operate()
+            num1 = result;  //set num1 to the result
             document.getElementById("display").querySelector("span").innerHTML = userDisplay; //set user display to userDisplay variable
         }
     }) 
