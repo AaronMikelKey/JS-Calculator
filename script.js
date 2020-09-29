@@ -35,12 +35,13 @@ for (let i=0;i<numInputs.length;i++) {
         if (userDisplay === "0" || userDisplay === "") {
             document.getElementById("display").querySelector("span").innerHTML = this.value;
             userDisplay = this.value;
-        } else if (userDisplay.length<25) {
-        document.getElementById("display").querySelector("span").innerHTML += this.value;
-        userDisplay += this.value;
-        } else {
+        }  else if (userDisplay.length > 25) {
             document.getElementById("displayWarning").querySelector("span").innerHTML = "Overflow";
-        }
+        } else {
+            userDisplay = "";
+            userDisplay += this.value;
+            document.getElementById("display").querySelector("span").innerHTML += userDisplay;
+            }
     })
 }
 
@@ -67,8 +68,9 @@ for (let i=0;i<opInputs.length;i++) {
             operate(operator, num1, num2); //perform math on the two values
             userDisplay = result; //set userDisplay variable to the result of operate()
             num1 = result;  //set num1 to the result
+            num2 = undefined; //set num2 back to undefined so another number can be entered
             document.getElementById("display").querySelector("span").innerHTML = userDisplay; //set user display to userDisplay variable
-        } else if (operator != undefined && operator != "=" && num1 != undefined && num2 != undefined) { //Second press of operator button without changing input
+        } else if (operator != undefined && opInputs[i].value === "=" && num1 != undefined && num2 != undefined) { //Second press of operator button without changing input
             operate(operator, num1, num2); //perform math on the two values
             userDisplay = result; //set userDisplay variable to the result of operate()
             num1 = result;  //set num1 to the result
