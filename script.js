@@ -92,3 +92,13 @@ document.getElementById("sign").addEventListener("click", function() {
         document.getElementById("display").querySelector("span").innerHTML = userDisplay; //set user display to userDisplay variable
     }
 });
+
+//function for percent button.  Convert the input value to a decimal representing the percentage
+
+document.getElementById("percent").addEventListener("click", function() {
+    let regExp = /\.?0*$/g //regExp for matching trailing zeroes and the decimal place if directly preceding it
+    if (userDisplay != "" && userDisplay != 0) { //Shouldn't work if there is no input or if input is 0
+        userDisplay = parseFloat((userDisplay / 100).toString().replace(regExp, "")); //divides displayed number by 100, removes trailing zeroes and the decimal place if needed
+        document.getElementById("display").querySelector("span").innerHTML = userDisplay; //set user display to userDisplay variable
+    }
+});
